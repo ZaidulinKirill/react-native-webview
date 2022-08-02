@@ -931,8 +931,12 @@ RCTAutoInsetsProtocol>
     @"loading" : @(_webView.loading),
     @"canGoBack": @(_webView.canGoBack),
     @"canGoForward" : @(_webView.canGoForward),
-    @"test": @(_webView.canGoBack),
+    @"currentPage" : @{
+      @"title": _webView.backForwardList.currentItem ? _webView.backForwardList.currentItem.title : @"",
+      @"url": _webView.backForwardList.currentItem ? _webView.backForwardList.currentItem.URL.absoluteURL : @"",
+    }
   };
+  
   return [[NSMutableDictionary alloc] initWithDictionary: event];
 }
 
@@ -1356,12 +1360,6 @@ didFinishNavigation:(WKNavigation *)navigation
 {
   [_webView goBack];
 }
-
-- (void)goBack
-{
-  [_webView goBack];
-}
-
 
 - (void)reload
 {
