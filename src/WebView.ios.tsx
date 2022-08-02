@@ -129,6 +129,11 @@ const WebViewComponent = forwardRef<{}, IOSWebViewProps>(({
         'LOADING',
       ); Commands.reload(webViewRef.current)
     },
+    test: () => {
+      setViewState(
+        'LOADING',
+      ); Commands.reload(webViewRef.current)
+    },
     stopLoading: () => Commands.stopLoading(webViewRef.current),
     postMessage: (data: string) => Commands.postMessage(webViewRef.current, data),
     injectJavaScript: (data: string) => Commands.injectJavaScript(webViewRef.current, data),
