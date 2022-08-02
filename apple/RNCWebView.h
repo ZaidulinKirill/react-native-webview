@@ -108,6 +108,7 @@ shouldStartLoadForRequest:(NSMutableDictionary<NSString *, id> *_Nonnull)request
 - (void)goForward;
 - (void)goBack;
 - (void)reload;
+- (void)getHistory;
 - (void)stopLoading;
 - (void)requestFocus;
 #if !TARGET_OS_OSX

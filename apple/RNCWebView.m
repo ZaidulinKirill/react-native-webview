@@ -930,7 +930,8 @@ RCTAutoInsetsProtocol>
     @"title": _webView.title ?: @"",
     @"loading" : @(_webView.loading),
     @"canGoBack": @(_webView.canGoBack),
-    @"canGoForward" : @(_webView.canGoForward)
+    @"canGoForward" : @(_webView.canGoForward),
+    @"test": @(_webView.canGoBack),
   };
   return [[NSMutableDictionary alloc] initWithDictionary: event];
 }
@@ -1355,6 +1356,12 @@ didFinishNavigation:(WKNavigation *)navigation
 {
   [_webView goBack];
 }
+
+- (void)goBack
+{
+  [_webView goBack];
+}
+
 
 - (void)reload
 {
