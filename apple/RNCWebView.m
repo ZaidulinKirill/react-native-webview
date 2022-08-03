@@ -932,8 +932,7 @@ RCTAutoInsetsProtocol>
     @"canGoBack": @(_webView.canGoBack),
     @"canGoForward" : @(_webView.canGoForward),
     @"currentPage" : @{
-      @"title": _webView.backForwardList.currentItem ? _webView.backForwardList.currentItem.title : @"",
-      @"url": _webView.backForwardList.currentItem ? _webView.backForwardList.currentItem.URL.absoluteURL : @"",
+      @"url": _webView.backForwardList.currentItem != nil ? _webView.backForwardList.currentItem.URL.absoluteString : @""
     }
   };
   
